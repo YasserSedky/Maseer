@@ -5,6 +5,13 @@ body {
     padding: 0;
 }
 
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .bg-page {
     background-color: #f0f0f0;
 }
@@ -16,11 +23,8 @@ body {
     text-align: center;
 }
 
-.tit-head-m {
-    margin-top: 100px;
-}
-
 /* home */
+
 .top-area {
     background-color: #ffffff00;
     color: white;
@@ -31,7 +35,8 @@ body {
     text-align: center;
 }
 
-/* تنسيق الـ Navbar */
+/* Navbar */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -43,13 +48,10 @@ body {
     border-radius: 50px;
 }
 
-/* تنسيق الشعار */
 .logo img {
     height: 50px;
-    /* يمكنك تعديل الارتفاع حسب الحاجة */
 }
 
-/* تنسيق قائمة الروابط */
 .nav-links {
     list-style-type: none;
     margin: 0;
@@ -73,24 +75,8 @@ body {
     text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* تنسيق زر تغيير اللغة */
+
 .language-switcher button {
     background-color: #ffffff00;
     color: white;
@@ -105,6 +91,8 @@ body {
 .language-switcher button:hover {
     background-color: #ffffff00;
 }
+
+/*header*/
 
 .welcome-hero {
     border-bottom-right-radius: 16px;
@@ -177,13 +165,8 @@ body {
 
 
 /* introduce */
+
 .about-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -242,6 +225,17 @@ body {
     }
 }
 
+@media (max-width: 480px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+}
 
 
 
@@ -249,32 +243,21 @@ body {
 
 /* تنسيق قسم الخدمات */
 .service {
-    flex: 1;
-    padding: 20px;
     background: #f0f0f0;
     border-radius: 10px;
-    width: 700px;
+    overflow-x: hidden;
 }
 
 .service-img {
     width: 100%;
+    height: 100%;
     height: auto;
-}
-
-.services-container {
-    display: flex;
-    padding: 100px 100px; /* قللت المسافة للحفاظ على المساحة */
-    justify-content: flex-start; /* لضبط العرض بشكل صحيح */
-    margin-left: 213px;
 }
 
 .slider {
     position: relative;
-    width: 100%; /* جعلت عرض السلايد 100% ليتناسب مع الحاوية */
-    max-width: 1085px; /* وضع حد أقصى للعرض */
-    overflow: hidden; /* إخفاء الجزء الذي يخرج من السلايد */
-    margin-top: 40px;
-    margin-left: 20px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .slides {
@@ -295,7 +278,6 @@ body {
     height: 250px;
     display: block;
 }
-
 
 .hiden-img {
     overflow: hidden;
@@ -322,7 +304,7 @@ body {
     background-color: #828282ac;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    margin-left: 20px;
+    padding: 15px 0;
 }
 
 .controls {
@@ -330,7 +312,6 @@ body {
     align-items: center;
     gap: 15px;
 }
-
 
 .controls button {
     background: none;
@@ -353,39 +334,105 @@ body {
     justify-content: center;
     color: #000000;
     border-radius: 3px;
-    margin-left: 30px;
-    -webkit-transition: .3s linear;
-    -moz-transition: .3s linear;
-    -ms-transition: .3s linear;
-    -o-transition: .3s linear;
-    transition: .3s linear;
 }
 
-
-.control-tit-btn{
+.control-tit-btn {
     font-size: 18px;
     color: #000;
     text-decoration: none;
-    margin-right: 300px;
+    padding: 15px 0;
 }
 
+/* Media Queries */
+@media (max-width: 1024px) {
 
+    .slider {
+        width: 100%;
+        max-width: 100%;
+    }
 
+    .service-btn {
+        margin-left: 0;
+        justify-content: center;
+    }
 
+    .control-tit-btn {
+        font-size: 16px;
+        margin-right: 0;
+    }
 
-/* Products */
+    .slide img {
+        height: 200px;
+    }
 
-.Products {
-    margin-top: 60px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    .overlay-s {
+        font-size: 16px;
+    }
+
+    .slide-Shadow {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .slider {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .slide img {
+        height: 180px;
+    }
+
+    .overlay-s {
+        font-size: 14px;
+    }
+
+    .control-tit-btn {
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .controls button {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .slider {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .slide-Shadow {
+        width: 100%;
+        margin-left: 550px;
+    }
+
+    .slide img {
+        height: 160px;
+    }
+
+    .overlay-s {
+        font-size: 12px;
+    }
+
+    .control-tit-btn {
+        font-size: 12px;
+        margin-right: 0;
+    }
+
+    .controls button {
+        font-size: 18px;
+    }
 }
 
 .card-prod {
     background: white;
-    width: 519px;
+    width: 70%;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -446,7 +493,8 @@ body {
     background-color: transparent;
     border-left: 3px solid rgba(255, 255, 255, 0);
     border-bottom: 3px solid rgba(255, 255, 255, 0);
-    transform: rotate(-225deg); /* تدوير السهم بزاوية 45 درجة إلى الأسفل جهة اليسار */
+    transform: rotate(-225deg);
+    /* تدوير السهم بزاوية 45 درجة إلى الأسفل جهة اليسار */
     transition: transform 0.3s ease-in-out;
 
 }
@@ -463,25 +511,11 @@ body {
 
 
 
-
-
 /* Excellence */
-
-.wrapper {
-    margin-left: 350px;
-    width: 70%;
-    height: 65vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .container-slider {
     height: 400px;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: start;
-    margin-right: 250px;
 }
 
 .card {
@@ -498,12 +532,6 @@ body {
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 
-.card>.row {
-    color: white;
-    display: flex;
-    flex-wrap: nowrap;
-}
-
 .card>.row>.icon {
     background: #223;
     color: white;
@@ -515,7 +543,7 @@ body {
     margin: 15px;
 }
 
-.card>.row>.description {
+.card>.description {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -529,20 +557,11 @@ body {
 }
 
 .description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    opacity: 0;
     width: 100%;
     height: 100%;
-    margin-right: 60px;
-    margin-top: 170px;
     font-size: 16px;
 }
-
-
-
-
 
 input:checked+label {
     width: 600px;
@@ -566,6 +585,9 @@ input:checked+label .description {
 }
 
 
+
+
+
 /* success */
 
 @keyframes slide {
@@ -581,11 +603,9 @@ input:checked+label .description {
 .logos {
     overflow: hidden;
     padding: 60px 0;
-    background: white;
+    background: rgba(122, 122, 122, 0.044);
     white-space: nowrap;
     position: relative;
-    margin-bottom: 100px;
-    margin-top: 100px;
 }
 
 .logos:before,
@@ -622,55 +642,37 @@ input:checked+label .description {
     margin: 0 40px;
 }
 
-
-
-
-
-
-
-
 /* contact */
 
 .contact-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
     background: #475c6e;
-    /* الخلفية الزرقاء */
-    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 1281px;
-    height: 601px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-bottom: 100px;
-    direction: rtl;
 }
 
+/* Form container */
 .form-container {
     flex: 1;
     text-align: center;
     color: white;
-    /* النص الأبيض داخل النموذج */
     margin-bottom: 20px;
 }
 
+/* Form title */
 .form-container h2 {
     font-size: 22px;
     color: white;
-    /* تغيير اللون إلى الأبيض */
     margin-bottom: 15px;
 }
 
+/* Form elements */
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Inputs and textarea */
 input,
 textarea {
     width: 100%;
@@ -685,9 +687,9 @@ textarea {
     resize: none;
 }
 
+/* Button */
 button {
     background: #ffffff;
-    /* خلفية زر الإرسال باللون الأخضر */
     color: rgb(0, 0, 0);
     padding: 12px;
     border: none;
@@ -699,40 +701,86 @@ button {
 
 button:hover {
     background: #ffffff;
-    /* تدرج أخضر داكن عند التمرير */
 }
 
-.image-container {
-    flex: 1;
-    text-align: center;
-}
+/* Image container */
 
+/* Image styling */
 .image-container img {
     width: 510px;
     max-width: 100%;
     border-radius: 12px;
 }
 
+/* ----- Media Queries ----- */
 
+/* For tablets and smaller devices (e.g., portrait orientation) */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 90%;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+    }
 
+    .image-container img {
+        width: 80%;
+        margin-top: 15px;
+    }
 
+    .form-container h2 {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        padding: 15px;
+        flex-direction: column;
+    }
+
+    .form-container {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 16px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .image-container img {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
 
 
 
 
 
 /*footer*/
-.footer {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .logo-container img {
     width: 150px;
@@ -744,7 +792,8 @@ button:hover {
 }
 
 .social-icons a {
-    margin: 0 15px;
+    margin: 0 5px;
+    text-decoration: none;
 }
 
 .social-icons img {
@@ -759,9 +808,7 @@ button:hover {
 .footer-text {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 60px;
     color: #262622;
-    margin-top: 20px;
 }
 
 .contact-info {
@@ -778,13 +825,8 @@ button:hover {
     text-decoration: underline;
 }
 
-.footer-copyright {
-    height: 60px;
-    padding: 20px 0 17px;
-    border-top: 1px solid #434859;
-    border-bottom: 1px solid #434859 ;
-}
-.footer-copyright p,.footer-copyright p a {
+.footer-copyright p,
+.footer-copyright p a {
     color: #a8a9bf;
     font-size: 14px;
     font-weight: 400;
